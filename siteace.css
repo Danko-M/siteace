@@ -2,3 +2,8 @@
 .hidden_div{
 	display:none;
 }
+#login-buttons {
+	position: relative;
+  top: 15px;
+  left: 15px;
+}
