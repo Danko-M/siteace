@@ -1,4 +1,4 @@
-## Final task for Coursera's course "[Introduction to Meteor.js Development](https://www.coursera.org/learn/meteor-development/home/welcome)"
+### Final task for Coursera's course "[Introduction to Meteor.js Development](https://www.coursera.org/learn/meteor-development/home/welcome)"
 
 
 - [x] Users can register and login.
@@ -9,7 +9,7 @@
 
 - [x] Websites should be listed with the most up voted site first. 
 
-- [ ] The listing page shows when the website was added and how many up and down votes it has.
+- [x] The listing page shows when the website was added and how many up and down votes it has.
 
 - [ ] Users can move to a detail page for a website (using routing). 
 
