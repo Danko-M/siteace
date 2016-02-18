@@ -1,3 +1,39 @@
+// Routes
+Router.configure({
+  layoutTemplate: 'ApplicationLayout'
+});
+
+Router.route('/', function () {
+  this.render('navbar', {
+  	to: "nav"
+  });
+  this.render('website_form', {
+  	to: "form"
+  });
+  this.render('website_list', {
+  	to: "websites"
+  });
+});
+
+Router.route('/nav', function () {
+  this.render('navbar', {
+  	to: "nav"
+  });  
+});
+
+Router.route('/form', function () {
+  this.render('navbar', {
+  	to: "nav"
+  });  
+  this.render('website_form', {
+  	to: "form"
+  }); 
+});
+
+
+
+// Accounts config
+///
 Accounts.ui.config({
   passwordSignupFields: 'USERNAME_ONLY'
 });

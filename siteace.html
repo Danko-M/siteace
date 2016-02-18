@@ -3,7 +3,19 @@
 </head>
 
 <body>
-	<!-- navbar  - you will be putting the login functions here -->
+
+
+</body>
+
+<template name="ApplicationLayout">
+	<div class="container">
+		{{> yield "nav"}}
+		{{> yield "form"}}
+		{{> yield "websites"}}
+	</div>
+</template>
+
+<template name="navbar">
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <div class="container">
@@ -16,13 +28,7 @@
 	    </div>
 	  </div>
 	</nav>
-
-	<div class="container">
-		{{> website_form}}
-		{{> website_list}}
-	</div>
-</body>
-
+</template>
 
 <template name="website_form">
 	{{#if currentUser}}
