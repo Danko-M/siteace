@@ -4,8 +4,9 @@
 
 <body>
 
-
 </body>
+
+
 
 <template name="ApplicationLayout">
 	<div class="container">
@@ -20,7 +21,7 @@
 	  <div class="container-fluid">
 	    <div class="container">
 	    	<div class="navbar-header">
-	    	  <a class="navbar-brand" href="#">
+	    	  <a class="navbar-brand" href="/">
 	    	    Site Ace
 	    	  </a>
 	    	  {{> loginButtons}}
@@ -72,7 +73,7 @@
 		<p>
 			{{description}}
 		</p>
-		<p>Added on: {{addedOn}} | Votes: {{votes}}</p>
+		<p>Added on: {{addedOn}} | Votes: {{votes}} <a href="/site/{{_id}}" class="btn btn-info" target="_blank">About site</a> </p>
 		<a href="#" class="btn btn-default js-upvote">
 			<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
 		</a>
@@ -82,3 +83,8 @@
 		<!-- you will be putting your up and down vote buttons in here! -->
 	</li>
 </template>
+
+<template name="website_single">
+	<p>{{title}}</p>
+	<p>{{description}}</p>
+</template>	

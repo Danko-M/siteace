@@ -30,6 +30,18 @@ Router.route('/form', function () {
   }); 
 });
 
+Router.route('/site/:_id', function () {
+  this.render('navbar', {
+  	to: "nav"
+  });  
+  this.render('website_single', {
+  	to: "websites", 	
+		data: function (){
+			return Websites.findOne({_id: this.params._id});
+		}
+  }); 
+});
+
 
 
 // Accounts config
