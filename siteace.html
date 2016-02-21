@@ -11,9 +11,7 @@
 <template name="ApplicationLayout">
 	<div class="container">
 		{{> yield "nav"}}
-		{{> yield "form"}}
-		{{> yield "websites"}}
-		{{> yield "comments"}}
+		{{> yield "main"}}
 	</div>
 </template>
 
@@ -60,6 +58,7 @@
 
 <!-- template that displays several website items -->
 <template name="website_list">
+	{{>website_form}}
 	<ol>
 	{{#each websites}}
 	{{>website_item}}
@@ -74,7 +73,7 @@
 		<p>
 			{{description}}
 		</p>
-		<p>Added on: {{addedOn}} | Votes: {{votes}} <a href="/site/{{_id}}" class="btn btn-info" target="_blank">About site</a> </p>
+		<p>Added on: {{addedOn}} | Votes: {{votes}} <a href="/site/{{_id}}" class="btn btn-info" >About site</a> </p>
 		<a href="#" class="btn btn-default js-upvote">
 			<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
 		</a>
@@ -86,8 +85,12 @@
 </template>
 
 <template name="website_single">
+	<a href="/" class="btn btn-default">
+	  <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
+	</a>
 	<p>{{title}}</p>
 	<p>{{description}}</p>
+	{{>comments}}
 </template>	
 
 <template name="comments">
