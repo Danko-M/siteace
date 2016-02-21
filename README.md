@@ -13,4 +13,4 @@
 
 - [x] Users can move to a detail page for a website (using routing). 
 
-- [ ] On the detail page, users can post comments about a webpage, and they are displayed below the description of the webpage.
+- [x] On the detail page, users can post comments about a webpage, and they are displayed below the description of the webpage.
