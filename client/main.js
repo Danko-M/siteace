@@ -40,6 +40,9 @@ Router.route('/site/:_id', function () {
 			return Websites.findOne({_id: this.params._id});
 		}
   }); 
+  this.render('comments', {
+  	to: "comments"
+  }); 
 });
 
 
@@ -129,8 +132,27 @@ Template.website_form.events({
 	      createdBy:Meteor.user()._id
 	    });
     }
-
 		return false;// stop the form submit from reloading the page
-
 	}
+
+	
 });
+
+
+// This one should be binded to comments template events:
+
+
+  // "submit .js-save-website-comment":function(event){
+
+		// // here is an example of how to get the url out of the form:
+		// var newComment = event.target.comment.value;
+		
+		// //  put your website saving code in here!	
+		// if (Meteor.user()){
+	 //    Websites.insert({
+	 //      comment: newComment, 
+	 //      commentBy:Meteor.user()._id
+	 //    });
+  //   }
+		// return false;// stop the form submit from reloading the page
+  // }

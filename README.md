@@ -11,6 +11,6 @@
 
 - [x] The listing page shows when the website was added and how many up and down votes it has.
 
-- [ ] Users can move to a detail page for a website (using routing). 
+- [x] Users can move to a detail page for a website (using routing). 
 
 - [ ] On the detail page, users can post comments about a webpage, and they are displayed below the description of the webpage.
