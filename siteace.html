@@ -88,15 +88,41 @@
 	<a href="/" class="btn btn-default">
 	  <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
 	</a>
-	<p>{{title}}</p>
+	<p><a href="{{url}}">{{title}}</a></p>
 	<p>{{description}}</p>
-	{{>comments}}
+
+	{{#if currentUser}}
+		{{>comments}}
+	{{else}}
+		<p>Please login in order to submit comment.</p>
+	{{/if}}
 </template>	
 
-<template name="comments">
-	<p>You can add your comment:</p>
+<template name="comment_item">
 	<p>{{comment}}</p>
-	<p>{{commentedBy}}</p>
-	<textarea name="#" id="" placeholder="Type your comment here"></textarea>
-	<button type="submit" class="btn btn-success js-save-website-comment">Save comment</button>
+	<p>Commented by: {{createdByUsername}}</p><br>
+</template>
+
+
+<template name="comments">    commentsList
+	<p>You can add your comment:</p>
+
+	<ol>
+		{{#each comments}}
+		{{>comment_item}}
+		{{/each}}
+	</ol>
+
+	<div id="comment_form">
+		<form class="js-save-comment-form">
+
+	    <div class="form-group">
+		    <label for="description">Comment by: {{commentedBy}}</label>
+		    <input type="text" class="form-control" id="text" placeholder="I found this site really useful for ...">
+		  </div>
+
+		  <button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+
 </template> 

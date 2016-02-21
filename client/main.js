@@ -62,6 +62,7 @@ Template.website_item.events({
 	}
 })
 
+
 Template.website_form.events({
 	"click .js-toggle-website-form":function(event){
 		$("#website_form").toggle('slow');
@@ -90,20 +91,26 @@ Template.website_form.events({
 });
 
 
-// This one should be binded to comments template events:
 
 
-  // "submit .js-save-website-comment":function(event){
+Template.comments.helpers({
+	comments:function(){
+		return Comments.find({});
+	}
+});
 
-		// // here is an example of how to get the url out of the form:
-		// var newComment = event.target.comment.value;
-		
-		// //  put your website saving code in here!	
-		// if (Meteor.user()){
-	 //    Websites.insert({
-	 //      comment: newComment, 
-	 //      commentBy:Meteor.user()._id
-	 //    });
-  //   }
-		// return false;// stop the form submit from reloading the page
-  // }
+Template.comments.events({
+	"submit .js-save-comment-form":function(event){
+
+		var newComment = event.target.text.value;
+
+
+		Comments.insert({
+		  comment: newComment,
+		  createdByUsername: Meteor.user().username
+		});
+
+		return false;// stop the form submit from reloading the page
+	}
+});
+
